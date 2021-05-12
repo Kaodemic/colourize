@@ -11,7 +11,7 @@ listOfWallpapers = glob(r".\Wallpapers\**")
 for i in listOfWallpapers:
     for j in listOfWallpapers:
         for k in listOfWallpapers:
-            if i is not j and i is not k and j is not k :
+            if i is not j and i is not k and j is not k:
                 print(f"working on {i} & {j} & {k}")
                 print()
                 img1 = cv2.imread(i, -1)
@@ -37,12 +37,14 @@ for i in listOfWallpapers:
                 # imgN = cv2.blur(imgN,(10,10))
                 # imgN = cv2.GaussianBlur(imgN, (5,5),0)
                 # imgN = cv2.medianBlur(imgN,5)
-                imgN = cv2.dilate(imgN, np.ones((255,255), np.uint8), iterations=1)
+                imgN = cv2.dilate(imgN, np.ones(
+                    (255, 255), np.uint8), iterations=1)
                 imgN = cv2.GaussianBlur(imgN, (255, 255), 0)
 
                 imgN = cv2.resize(imgN, (int(W), int(H)))
 
                 img = Image.fromarray(imgN)
 
-                outputPath = f"{i}_WITH_{j}_WITH_{k}".replace(".\\Wallpapers\\","")
+                outputPath = f"{i}_WITH_{j}_WITH_{k}".replace(
+                    ".\\Wallpapers\\", "")
                 img.save(f".\\Output6\\{outputPath}")

@@ -1,6 +1,6 @@
 tox>=2.7.0
 logzero  # see github.com/metachris/logzero
 GitPython
-glob3
 opencv-python
 numpy
+cv2
